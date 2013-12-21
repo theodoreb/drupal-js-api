@@ -5,7 +5,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        <?js= data.description ?>
+        <?js= '<p>' + data.description.split('\n\n').join('</p><p>') + '</p>' ?>
         </div>
     </dt>
     <dt>
@@ -22,7 +22,7 @@
 <?js } else { ?>
     <div class="param-desc">
     <?js if (data.description) { ?>
-        <?js= data.description ?>
+        <?js= '<p>' + data.description.split('\n\n').join('</p><p>') + '</p>' ?>
     <?js } else if (data.type && data.type.names) { ?>
         <?js= this.partial('type.tmpl', data.type.names) ?>
     <?js } ?>

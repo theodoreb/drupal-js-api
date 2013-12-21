@@ -34,7 +34,7 @@
         <?js= self.partial('method.tmpl', doc) ?>
     <?js } else { ?>
         <?js if (doc.description) { ?>
-            <div class="description"><?js= doc.description ?></div>
+            <div class="description"><?js= '<p>' + doc.description.split('\n\n').join('</p><p>') + '</p>' ?></div>
         <?js } ?>
         
         <?js= self.partial('details.tmpl', doc) ?>
@@ -77,7 +77,7 @@
         <h3 class="subsection-title">Classes</h3>
         
         <dl><?js classes.forEach(function(c) { ?>
-            <dt><?js= self.linkto(c.longname, c.name) ?></dt>
+            <dt><?js= self.linkto(c.longname, c.longname) ?></dt>
             <dd><?js if (c.summary) { ?><?js= c.summary ?><?js } ?></dd>
         <?js }); ?></dl>
     <?js } ?>
@@ -89,7 +89,7 @@
         <h3 class="subsection-title">Namespaces</h3>
         
         <dl><?js namespaces.forEach(function(n) { ?>
-            <dt><a href="namespaces.html#<?js= n.longname ?>"><?js= self.linkto(n.longname, n.name) ?></a></dt>
+            <dt><a href="namespaces.html#<?js= n.longname ?>"><?js= self.linkto(n.longname, n.longname) ?></a></dt>
             <dd><?js if (n.summary) { ?><?js= n.summary ?><?js } ?></dd>
         <?js }); ?></dl>
     <?js } ?>

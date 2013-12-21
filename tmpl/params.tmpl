@@ -38,7 +38,7 @@
     });
 ?>
 
-<table class="params">
+<table class="params pure-table">
     <thead>
 	<tr>
 		<?js if (params.hasName) {?>
@@ -101,7 +101,7 @@
                 </td>
             <?js } ?>
             
-            <td class="description last"><?js= param.description ?><?js if (param.subparams) { ?>
+            <td class="description last"><?js= !param.description ? '' : '<p>' + param.description.split('\n\n').join('</p><p>') + '</p>' ?><?js if (param.subparams) { ?>
                 <h6>Properties</h6>
                 <?js= self.partial('params.tmpl', param.subparams) ?>
             <?js } ?></td>

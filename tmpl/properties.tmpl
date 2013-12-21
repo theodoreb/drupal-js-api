@@ -38,7 +38,7 @@
     });
 ?>
 
-<table class="props">
+<table class="props pure-table">
     <thead>
 	<tr>
 		<?js if (props.hasName) {?>
@@ -97,7 +97,7 @@
                 </td>
             <?js } ?>
             
-            <td class="description last"><?js= prop.description ?><?js if (prop.subprops) { ?>
+            <td class="description last"><?js= !prop.description ? '' : '<p>' + prop.description.split('\n\n').join('</p><p>') + '</p>' ?><?js if (prop.subprops) { ?>
                 <h6>Properties</h6><?js= self.partial('properties.tmpl', prop.subprops) ?>
             <?js } ?></td>
         </tr>
