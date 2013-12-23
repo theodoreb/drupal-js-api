@@ -4,7 +4,7 @@ var self = this;
 ?>
 <dt>
     <h3 class="name" id="<?js= id ?>"><?js= data.attribs + name + (data.signature ? data.signature : '') ?></h3>
-    
+
     <?js if (data.summary) { ?>
     <p class="summary"><?js= summary ?></p>
     <?js } ?>
@@ -12,12 +12,12 @@ var self = this;
 <dd>
     <?js if (data.description) { ?>
     <div class="description">
-        <?js= '<p>' + data.description.split('\n\n').join('</p><p>') + '</p>' ?>
+        <?js= data.description ?>
     </div>
     <?js } ?>
 
     <?js= this.partial('details.tmpl', data) ?>
-    
+
     <?js if (data.examples && examples.length) { ?>
         <h4>Example<?js= examples.length > 1? 's':'' ?></h4>
         <?js= this.partial('examples.tmpl', examples) ?>
