@@ -568,5 +568,11 @@
     }
 
     saveChildren(tutorials);
+
+    // Export API-friendly stuff
+    taffyData({undocumented: true}).remove();
+    var all = taffyData().get();
+
+    fs.writeFileSync(outdir + '/all.json', JSON.stringify(all, null, 2), 'utf8');
   };
 }());
