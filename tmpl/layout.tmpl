@@ -16,22 +16,19 @@
 
 <div id="main" class="pure">
 
-  <div class="pure-g">
-
-    <div class="pure-u-4-5">
-      <div class="box">
-        <h1 class="page-title"><?js= title ?></h1>
-        <?js= content ?>
-      </div>
+  <div class="main">
+    <div class="box">
+      <h1 class="page-title"><?js= title ?></h1>
+      <?js= content ?>
     </div>
-
-    <nav class="pure-u-1-5">
-      <div class="box"><?js= this.nav ?>
-
-      <p><strong>For more information about this documentation please see <a href="https://drupal.org/node/2182153">Issue #2182153: Use JSDoc</a>.</strong></p>
-      </div>
-    </nav>
   </div>
+
+  <nav class="side">
+    <div class="box"><?js= this.nav ?>
+
+    <p><strong>For more information about this documentation please see <a href="https://drupal.org/node/2182153">Issue #2182153: Use JSDoc</a>.</strong></p>
+    </div>
+  </nav>
 
 </div>
 
